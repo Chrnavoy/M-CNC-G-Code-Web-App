@@ -2,7 +2,17 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
+
 }
+
+<label for="material">Choose a Material:</label>
+
+<select name="cars" id="cars">
+    <option value="stainless">Stainless</option>
+    <option value="mild">Mild Steel</option>
+ 
+</select>
 
 <table class="table table-bordered">
     <thead>
@@ -90,3 +100,5 @@
         </tr>
     </tbody>
 </table>
+
+<button type="button">Download G Code</button>
