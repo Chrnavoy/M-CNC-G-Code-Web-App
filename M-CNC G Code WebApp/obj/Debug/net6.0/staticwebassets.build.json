@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dyAnvj4X1iJMYNSlOjaIGqnuOJGbLrYu3+EFE7rZgrI=",
+  "Hash": "r25bOqSXnC5wcZUUn7YaW7/JC08JnCPD7/jpS/icd8U=",
   "Source": "M-CNC G Code WebApp",
   "BasePath": "_content/M-CNC G Code WebApp",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\christian.navoy\\source\\repos\\M-CNC G Code WebApp\\M-CNC G Code WebApp\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\christian.navoy\\source\\repos\\M-CNC G Code WebApp\\M-CNC G Code WebApp\\wwwroot\\js\\OD.js",
       "SourceId": "M-CNC G Code WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\christian.navoy\\source\\repos\\M-CNC G Code WebApp\\M-CNC G Code WebApp\\wwwroot\\",
       "BasePath": "_content/M-CNC G Code WebApp",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/OD.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\OD.js"
     },
     {
       "Identity": "C:\\Users\\christian.navoy\\source\\repos\\M-CNC G Code WebApp\\M-CNC G Code WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

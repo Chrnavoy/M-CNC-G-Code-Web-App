@@ -1,0 +1,105 @@
+﻿@page
+@model M_CNC_G_Code_WebApp.Pages.Pages_OD
+@{
+    ViewData["Title"] = "Outside Diameter";
+}
+
+
+
+
+<label for="material">Choose a Material:</label>
+
+<select name="cars" id="cars">
+    <option value="stainless">Stainless</option>
+    <option value="mild">Mild Steel</option>
+ 
+</select>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">How to calculate</th>
+            <th scope="col">X Value</th>
+            <th scope="col">Z Value</th>
+            <th scope="col">Angle A Value</th>
+            <th scope="col">R Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Rapid Point</th>
+            <th>X=Bore Size -1mm. Z=1.0mm</th>
+            <th><input type="number" id="ODxValueRP" step="0.01" /></th>
+            <th>1.0</th>
+            <th>N/A</th>
+            <th>N/A</th>
+
+        </tr>
+        <tr>
+            <th scope="row">OD Start</th>
+            <th>x=Rapid point, Z=feed to z0.0</th>
+            <th>M/A</th>
+            <th>0.0</th>
+            <th>N/A</th>
+            <th>N/A</th>
+
+            
+        </tr>
+        <tr>
+            <th scope="row">Intersection 1</th>
+            <th>(Unknown X) Prog ,A90</th>
+            <th>N/A</th>
+            <th>N/A</th>
+            <th>90</th>
+            <th>0.2</th>
+           
+        </tr>
+        <tr>
+            <th scope="row">Intersection 2</th>
+            <th>Prog angle ,A and enter target X and Z values</th>
+            <th><input type="number" id="ODxValueI2" step="0.01" /></th>
+            <th><input type="number" id="ODzValueI2" step="0.01" /></th>
+            <th><input type="number" id="ODaValueI2" step="0.01" /></th>
+            <th>N/A</th>
+          
+        </tr>
+        <tr>
+            <th scope="row">Intersection 3</th>
+            <th>Work out Z figure from drawing intersection point</th>
+            <th>N/A</th>
+            <th><input type="number" id="ODzValueI3" step="0.01" /></th>
+            <th>N/A</th>
+            <th>N/A</th>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 4</th>
+            <th>Prog angle ,A (work out incremental move U value)/th>
+            <th><input type="number" id="ODxValueI4" step="0.01" /></th>
+            <th>N/A</th>
+            <th><input type="number" id="ODaValueI4" step="0.01"/></th>
+            <th>N/A</th>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 5</th>
+            <th>Z=Part length + 1mm</th>
+            <th>N/A</th>
+            <th><input type="number" id="ODzValueI5" step="0.01" /></th>
+            <th>N/A</th>
+            <th>N/A</th>
+
+        </tr>
+        <tr>
+            <th scope="row">OD End</th>
+            <th>Main OD + 1mm</th>
+            <th><input type="number" id="ODxValueODE" step="0.01"/></th>
+            <th>N/A</th>
+            <th>N/A</th>
+            <th>N/A</th>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" onclick="download()">Download G Code</button>

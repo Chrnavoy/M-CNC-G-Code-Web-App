@@ -24,12 +24,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/ID.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSUQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/OD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT0QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/PartOff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydE9mZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/Pre-Partoff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJlLVBhcnRvZmYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/SingleGroove.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2luZ2xlR3Jvb3ZlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/christian.navoy/source/repos/M-CNC G Code WebApp/M-CNC G Code WebApp/Pages/_ViewImports.cshtml]
