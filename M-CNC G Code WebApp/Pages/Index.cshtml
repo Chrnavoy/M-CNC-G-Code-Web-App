@@ -4,7 +4,89 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">How to calculate</th>
+            <th scope="col">X Value</th>
+            <th scope="col">Z Value</th>
+            <th scope="col">Angle A Value</th>
+            <th scope="col">R Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Rapid Point</th>
+            <th>X=Bore Size -1mm. Z=1.0mm</th>
+            <th><input type="text" id="xValueRP" pattern="^(?:^(N/A|[0-9]+)$)$" /></th>
+            <th><input type="text" id="zValueRP" value="1.0" /></th>
+            <th><input type="text" id="aValueRP"  /></th>
+            <th><input type="text" id="rValueRP"  /></th>
+
+        </tr>
+        <tr>
+            <th scope="row">OD Start</th>
+            <th>x=Rapid point, Z=feed to z0.0</th>
+            <th><input type="text" id="xValueODS"  /></th>
+            <th><input type="text" id="zValueODS"  /></th>
+            <th><input type="text" id="aValueODS" /></th>
+            <th><input type="text" id="rValueODS"  /></th>
+
+            
+        </tr>
+        <tr>
+            <th scope="row">Intersection 1</th>
+            <th>(Unknown X) Prog ,A90</th>
+            <th><input type="text" id="xValueI1"  /></th>
+            <th><input type="text" id="zValueI1"  /></th>
+            <th><input type="text" id="aValueI1"  /></th>
+            <th><input type="text" id="rValueI1"  /></th>
+           
+        </tr>
+        <tr>
+            <th scope="row">Intersection 2</th>
+            <th>Prog angle ,A and enter target X and Z values</th>
+            <th><input type="text" id="xValueI2"  /></th>
+            <th><input type="text" id="zValueI2"  /></th>
+            <th><input type="text" id="aValueI2"  /></th>
+            <th><input type="text" id="rValueI2" /></th>
+          
+        </tr>
+        <tr>
+            <th scope="row">Intersection 3</th>
+            <th>Work out Z figure from drawing intersection point</th>
+            <th><input type="text" id="xValueI3"  /></th>
+            <th><input type="text" id="zValueI3"  /></th>
+            <th><input type="text" id="aValueI3" /></th>
+            <th><input type="text" id="rValueI3" /></th>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 4</th>
+            <th>Prog angle ,A (work out incremental move U value)/th>
+            <th><input type="text" id="xValueI4"  /></th>
+            <th><input type="text" id="zValueI4"  /></th>
+            <th><input type="text" id="aValueI4" /></th>
+            <th><input type="text" id="rValueI4" /></th>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 5</th>
+            <th>Z=Part length + 1mm</th>
+            <th><input type="text" id="xValueI5"  /></th>
+            <th><input type="text" id="zValueI5"  /></th>
+            <th><input type="text" id="aValueI5"  /></th>
+            <th><input type="text" id="rValueI5" /></th>
+
+        </tr>
+        <tr>
+            <th scope="row">OD End</th>
+            <th>Main OD + 1mm</th>
+            <th><input type="text" id="xValueODE" /></th>
+            <th><input type="text" id="zValueODE" /></th>
+            <th><input type="text" id="aValueODE" /></th>
+            <th><input type="text" id="rValueODE"  /></th>
+        </tr>
+    </tbody>
+</table>
