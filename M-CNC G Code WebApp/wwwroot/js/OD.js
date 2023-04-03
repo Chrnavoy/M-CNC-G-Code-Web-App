@@ -25,39 +25,86 @@
 }
 
 function convertToFloat(data) {
-    for (var key in data) {
-        let convert = data[key]
-        float = parseFloat(convert)
-        fixed = float.toFixed(2)
-        data[key] = fixed
-        console.log(data[key])
+
+
+    following0 = '.00'
+    // Decimals are break i.e. 4.0 return 4.0.00
+
+    if (data.length == 1) {
+
+        number = data.toString().padStart(2, '0')
+        float = number.concat(following0)
+        return float
+    }
+    else {
+
+        float = data.concat(following0)
+        return float
     }
 }
+
+function convertAngle(data) {
+
+    if (data.length == 2) {
+ 
+        angle = data.toString().padStart(3, '0')
+        console.log(angle)
+        return angle;
+    }
+
+    else if (data.length == 1) {
+        angle = data.toString().padStart(3, '0')
+        console.log(angle)
+        return angle;
+    }
+
+    else {
+        console.log(data)
+        return data
+    }
+    
+}
+    
+   
 
 
 function GCodeOD() {
 
     data = extractData();
-    convertToFloat(data);
+    //convertToFloat(data);
 
-    safeStart = "N01M98P7000"
-    toolOffset = "T0101"
-    surfaceSpeed = "G96 S" + "M3P11"
-    rapidStart = "G0 X" + data["ODxValueRP"] + " Z1.0 M8"
-    odStart = "G1G42 Z0.0 F0.1"
-    intersection1 = ",A90,R0.2"
-    intersection2 = ",A" + "X" + "Z-"
-    intersection3 = "Z-"
-    intersection4 = ",A" + "U-"
-    intersection5 = "Z-"
-    odEnd = "G0 X"
-    subSafeStart = "M98P7000"
-    optionalStop = "M1"
     
-    console.log(rapidStart)
+    safeStart = "N01M98P7000\n"
+    toolOffset = "T0101\n"
+    surfaceSpeed = "G96 S" + "M3P11\n"
+    rapidStart = "G0 X" + convertToFloat(data["ODxValueRP"]) + " Z1.0 M8\n"
+    odStart = "G1G42 Z0.0 F0.1\n"
+    intersection1 = ",A90,R0.2\n"
+    intersection2 = ",A " + convertAngle(data["ODaValueI2"]) + "X" + convertToFloat(data["ODxValueI2"]) + "Z-" + convertToFloat(data["ODzValueI2"]) + "\n"
+    intersection3 = "Z-" + convertToFloat(data["ODzValueI3"]) + "\n"
+    intersection4 = ",A" + convertAngle(data["ODaValueI4"]) + " U-" + convertToFloat(data["ODxValueI4"]) + "\n"
+    intersection5 = "Z-" + convertToFloat(data["ODzValueI5"]) + "\n"
+    odEnd = "G0 X" + convertToFloat(data["ODxValueODE"]) + "\n"
+    subSafeStart = "M98P7000\n"
+    optionalStop = "M1"
+
+    let ODGCodeArray = [safeStart, toolOffset, surfaceSpeed, rapidStart, odStart, intersection1, intersection2, intersection3, intersection4, intersection5, odEnd, subSafeStart, optionalStop]
+    ODGCode = ODGCodeArray.join("")
+
+    return ODGCode
 
 }
 
 function download() {
-    GCodeOD()
-}
+   gCode = GCodeOD()
+
+  
+    var a = document.createElement('a')
+        var blob = new Blob([gCode], { type: 'text/plain' })
+        var url = URL.createObjectURL(blob)
+        a.setAttribute('href', url)
+        a.setAttribute('download', 'gcode.txt')
+        a.click()
+
+        
+    }
