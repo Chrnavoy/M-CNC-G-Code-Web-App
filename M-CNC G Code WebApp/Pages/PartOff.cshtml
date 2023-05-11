@@ -1,5 +1,134 @@
 ﻿@page
 @model M_CNC_G_Code_WebApp.Pages.PartOffModel
 @{
+    ViewData["Title"] = "Part Off";
 }
-<h1>partoff</h1>
+<div><h3>Part Off</h3></div>
+<div>
+    <label for="material">Choose a Material:</label>
+    <select name="material" id="materialPO">
+        <option value="1">Stainless</option>
+        <option value="2">Mild Steel</option>
+        <option value="3">Aluminium</option>
+
+    </select>
+    <label for="PartnoPO"> Part Number</label>
+    <input type="number" id="partnoPO" />
+
+
+
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">How to calculate</th>
+            <th scope="col">X Value</th>
+            <th scope="col">Z Value</th>
+            <th scope="col">Angle A Value</th>
+            <th scope="col">R Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Rapid Start</th>
+            <td>X=Main OD + 1mm, Z= Part Length + Tool Width</td>
+            <td><input type="number" id="POxValueRS1" step="0.01" /></td>
+            <td>-<input type="number" id="POzValueRS1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Plunge Start 1</th>
+            <td>X = Start Ø + 1.0 mm </td>
+            <td><input type="number" id="POxValuePS1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+
+        </tr>
+        <tr>
+            <th scope="row">Plunge End</th>
+            <td>X = Start Ø - 1.0 mm </td>
+            <td><input type="number" id="POxValuePE" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+
+        </tr>
+        <tr>
+            <th scope="row">Plunge Start 2</th>
+            <td>X = Start Ø + 1.0 mm </td>
+            <td><input type="number" id="POxValuePS2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Start Point</th>
+            <td>X = Plunge Start </td>
+            <td>N/A</td>
+            <td>W 1.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+         <tr>
+            <th scope="row">Feather Start</th>
+           <td>Incremental Move</td>
+            <td>U-0.95</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Feather End</th>
+            <td>Incremental Move to Target Point</td>
+            <td>U-0.95</td>
+            <td>W-1.0</td>
+            <td>N/A</td>
+            <td>R0.5</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Slow Spindle</th>
+            <td>X = Bore size + 1.0mm</td>
+            <td><input type="number" id="POxValueSS" step="0.01" min="0" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Part Off End</th>
+            <td>X = Bore size - 1.0mm</td>
+            <td><input type="number" id="POxValuePOE" step="0.01" min="0" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Rapid Start</th>
+            <td>X=Main OD + 1mm, Z= Part Length + Tool Widtd</td>
+            <td><input type="number" id="POxValueRS2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+
+    </tbody>
+</table>
+<div>
+    <p>
+        Notes;
+How to calculate the Rapid Start point in Z 
+Z = Part Length + Tool width
+    </p>
+</div>
+<button type="button" id="GCodePO">Download G Code</button>
+
+<script src="~/js/PartOff.js" asp-append-version="true"></script>

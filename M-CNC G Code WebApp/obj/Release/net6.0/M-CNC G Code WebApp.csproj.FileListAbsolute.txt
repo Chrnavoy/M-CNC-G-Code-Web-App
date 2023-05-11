@@ -1,0 +1,31 @@
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\appsettings.Development.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\appsettings.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\M-CNC G Code WebApp.staticwebassets.runtime.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\M-CNC G Code WebApp.exe
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\M-CNC G Code WebApp.deps.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\M-CNC G Code WebApp.runtimeconfig.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\M-CNC G Code WebApp.dll
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\bin\Release\net6.0\M-CNC G Code WebApp.pdb
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.csproj.AssemblyReference.cache
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.AssemblyInfoInputs.cache
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.AssemblyInfo.cs
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.csproj.CoreCompileInputs.cache
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.RazorAssemblyInfo.cache
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.RazorAssemblyInfo.cs
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets\msbuild.M-CNC G Code WebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets\msbuild.build.M-CNC G Code WebApp.props
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.M-CNC G Code WebApp.props
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.M-CNC G Code WebApp.props
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets.pack.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets.build.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\staticwebassets.development.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\scopedcss\bundle\M-CNC G Code WebApp.styles.css
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\scopedcss\projectbundle\M-CNC G Code WebApp.bundle.scp.css
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.dll
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\refint\M-CNC G Code WebApp.dll
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.pdb
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\M-CNC G Code WebApp.genruntimeconfig.cache
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\ref\M-CNC G Code WebApp.dll

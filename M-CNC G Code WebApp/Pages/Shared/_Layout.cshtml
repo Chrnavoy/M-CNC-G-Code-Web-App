@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/M_CNC_G_Code_WebApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/GCodeTable.css" asp-append-version="true" />
+  
 </head>
 <body>
     <header>
@@ -52,13 +53,19 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
+            <img src="~/lib/images/mcnc.png" width="100" height="100" />
              M-CNC GCode Designer
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/OD.js" asp-append-version="true"></script>
+      
+    <script src="~/js/Backend.js" asp-append-version="true"></script>
+    <script src ="~/js/firebase.js" type="module" asp-append-version="true"></script>
+
+
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -1,6 +1,98 @@
 ﻿@page
 @model M_CNC_G_Code_WebApp.Pages.Pre_PartoffModel
 @{
+    ViewData["Title"] = "Pre-Part Off";
 }
 
-<h1>prepartoff</h1>
+<div><h3>Pre-Part Off</h3></div>
+
+<div>
+    <label for="material">Choose a Material:</label>
+    <select name="material" id="materialPPO">
+        <option value="1">Stainless</option>
+        <option value="2">Mild Steel</option>
+        <option value="3">Aluminium</option>
+
+    </select>
+    <label for="PartnoOD"> Part Number</label>
+    <input type="number" id="partnoPPO" />
+
+
+
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">How to calculate</th>
+            <th scope="col">X Value</th>
+            <th scope="col">Z Value</th>
+            <th scope="col">Angle A Value</th>
+            <th scope="col">R Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Rapid Start 1</th>
+            <td>X=Bore Ø -1mm, Z = 1.0 </td>
+            <td><input type="number" id="PPOxValueRS1" step="0.01" /></td>
+            <td>1.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Start Point 1</th>
+            <td>X = As Rapid Start Z = Part Length + 1.5mm</td>
+            <td>N/A</td>
+            <td>-<input type="number" id="PPOzValueSP1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+
+        </tr>
+        <tr>
+            <th scope="row">End Point</th>
+            <td>X = Bore size + 0.75mm</td>
+            <td><input type="number" id="PPOxValueEP" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Start Point 2</th>
+            <td>X = Start Point</td>
+            <td><input type="number" id="PPOxValueSP2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+
+        </tr>
+        <tr>
+            <th scope="row">Rapid Start 2</th>
+            <td>X=Bore Ø -1mm, Z = 1.0 </td>
+            <td><input type="number" id="PPOxValueRS2" step="0.01" /></td>
+            <td>1.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        
+    </tbody>
+</table>
+
+<div>
+    <p>
+        Notes;
+        How to calculate the Rapid Start point in Z
+        Z = Part Length + Tool width
+    </p>
+</div>
+
+<button type="button" id="GCodePPO">Download G Code</button>
+
+
+<script src="~/js/Pre-PartOff.js" asp-append-version="true"></script>

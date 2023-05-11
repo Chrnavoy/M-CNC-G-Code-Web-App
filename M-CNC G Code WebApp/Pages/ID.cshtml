@@ -1,6 +1,120 @@
 ﻿@page
 @model M_CNC_G_Code_WebApp.Pages.IDModel
 @{
+    ViewData["Title"] = "Inside Diameter";
 }
+<div><h3>Inside Diameter</h3></div>
+<div>
+    <label for="material">Choose a Material:</label>
+    <select name="material" id="materialID">
+        <option value="1">Stainless</option>
+        <option value="2">Mild Steel</option>
+        <option value="3">Aluminium</option>
 
-<h1>id</h1>
+    </select>
+    <label for="PartnoID"> Part Number</label>
+    <input type="number" id="partnoID" />
+
+
+
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">How to calculate</th>
+            <th scope="col">X Value</th>
+            <th scope="col">Z Value</th>
+            <th scope="col">Angle A Value</th>
+            <th scope="col">R Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Rapid Point</th>
+            <td>X = Bore size - 2mm, Z= 2.0</td>
+            <td><input type="number" id="IDxValueRP" step="0.01" /></td>
+            <td>2.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">ID Start</th>
+            <td>X = Rapid Start X, Z=0.05</td>
+            <td>N/A</td>
+            <td>0.05</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 1</th>
+            <td>X = Target, Diameter Z=0.0    </td>
+            <td><input type="number" id="IDxValueI1" step="0.01" required/></td>
+            <td>0.0</td>
+            <td>N/A</td>
+            <td>0.2</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 2</th>
+            <td>Z = target value</td>
+            <td>N/A</td>
+            <td>-<input type="number" id="IDzValueI2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 3</th>
+            <td>X = Target Value</td>
+            <td><input type="number" id="IDxValueI3" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>0.2</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Intersection 4</th>
+            <td>Z = Part Lengtd + 1mm </td>
+            <td>N/A</td>
+            <td>-<input type="number" id="IDzValueI4" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+       
+        <tr>
+            <th scope="row">ID End</th>
+            <td>X = Small bore Ø -2 mm</td>
+            <td><input type="number" id="IDxValueIDE" step="0.01"  /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Rapid End</th>
+            <td>X = ID End Z=2.0</td>
+            <td>N/A</td>
+            <td>2.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <p>
+        Notes;
+        ID start is Z 0.05. This is to prevent a mismatch between tools on the
+        front face, the angle in to target point give a good blend.
+        Standard break edges are programmed at R0.2mm
+    </p>
+</div>
+<button type="button" id="GCodeID">Download G Code</button>
+
+
+<script src="~/js/ID.js" asp-append-version="true"></script>

@@ -1,5 +1,163 @@
 ﻿@page
 @model M_CNC_G_Code_WebApp.Pages.SingleGrooveModel
 @{
+    ViewData["Title"] = "Single Groove";
 }
-<h1>singelgroove</h1>
+
+<div>
+    <label for="material">Choose a Material:</label>
+    <select name="material" id="materialSG">
+        <option value="1">Stainless</option>
+        <option value="2">Mild Steel</option>
+        <option value="3">Aluminium</option>
+
+    </select>
+    <label for="PartnoOD"> Part Number</label>
+    <input type="number" id="partnoSG"/>
+    
+
+
+</div>
+
+<div><h3>Single Groove</h3></div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Identifier</th>
+            <th scope="col">How to calculate</th>
+            <th scope="col">X Value</th>
+            <th scope="col">Z Value</th>
+            <th scope="col">Angle A Value</th>
+            <th scope="col">R Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Rapid Start</th>
+            <td>X=Bore Size -1mm. Z=1.0mm</td>
+            <td><input type="number" id="SGxValueRS" step="0.01" /></td>
+            <td>1.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Start Point 1</th>
+            <td>X = As Rapid Start, Z = Calculated length</td>
+            <td>N/A</td>
+            <td>-<input type="number" id="SGzValueSP1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Groove Ø 1</th>
+            <td>X = From Drawing</td>
+            <td><input type="number" id="SGxValueG1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+           
+        </tr>
+
+        <tr>
+            <th scope="row">Bore Ø 1</th>
+            <td>X = From Drawing</td>
+            <td><input type="number" id="SGxValueB1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>0.4</td>
+
+        </tr>
+        <tr>
+            <th scope="row">End Point 1</th>
+            <td>Incremental Angled move (Feather off)</td>
+            <td>U-0.03</td>
+            <td>W -0.6</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+
+        <tr>
+            <th scope="row">Rapid Point 1</th>
+            <td>X = Bore Size - 1mm</td>
+            <td><input type="number" id="SGxValueRP1" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Start Point 2</th>
+            <td>'W' = GrooveWidth - Tool Width +0.6</td>
+            <td>N/A</td>
+            <td>W<input type="number" id="SGzValueSP2" step="0.01"/></td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Groove Ø 2</th>
+            <td>X = From Drawing</td>
+            <td><input type="number" id="SGxValueG2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+           
+        </tr>
+
+        <tr>
+            <th scope="row">Bore Ø 2</th>
+            <td>X = From Drawing</td>
+            <td><input type="number" id="SGxValueB2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>0.4</td>
+
+        </tr>
+
+         <tr>
+            <th scope="row">End Point 2</th>
+            <td>Incremental Angled move (Feather off)</td>
+            <td>U-0.03</td>
+            <td>W -0.6</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+
+        <tr>
+            <th scope="row">Rapid Point 2</th>
+            <td>X = Bore Size - 1mm</td>
+            <td><input type="number" id="SGxValueRP2" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+         <tr>
+            <th scope="row">Rapid Start</th>
+            <td>X=Bore Size -1mm. Z=1.0mm</td>
+            <td>N/A</td>
+            <td>1.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
+
+        </tr>
+        
+    </tbody>
+</table>
+
+<div>
+    <p>
+        Notes;
+        How to calculate the 'W' value for Start point 2
+        Groove width - Tool width + 0.6 (the incremental feather move)
+        ** to increase the groove width add the required amount to the W value
+    </p>
+</div>
+<button type="button" id="GCodeSG">Download G Code</button>
+
+
+<script src="~/js/SingleGroove.js" asp-append-version="true"></script>

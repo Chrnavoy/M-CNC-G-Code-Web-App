@@ -4,18 +4,23 @@
     ViewData["Title"] = "Outside Diameter";
 }
 
+<div><h3>Outside Diameter</h3></div>
+<div>
+    <label for="material">Choose a Material:</label>
+    <select name="material" id="materialOD">
+        <option value="1">Stainless</option>
+        <option value="2">Mild Steel</option>
+        <option value="3">Aluminium</option>
 
+    </select>
 
+    <label for="PartnoOD"> Part Number</label>
+    <input type="number" id="partnoOD"/>
+    
 
-<label for="material">Choose a Material:</label>
-
-<select name="cars" id="cars">
-    <option value="stainless">Stainless</option>
-    <option value="mild">Mild Steel</option>
- 
-</select>
-
-<table class="table table-bordered">
+</div>
+<div id="table">
+<table class="table table-bordered" style="display: inline">
     <thead>
         <tr>
             <th scope="col">Identifier</th>
@@ -29,77 +34,90 @@
     <tbody>
         <tr>
             <th scope="row">Rapid Point</th>
-            <th>X=Bore Size -1mm. Z=1.0mm</th>
-            <th><input type="number" id="ODxValueRP" step="0.01" /></th>
-            <th>1.0</th>
-            <th>N/A</th>
-            <th>N/A</th>
+            <td>X=Bore Size -1mm. Z=1.0mm</td>
+            <td><input type="number" id="ODxValueRP" step="0.01" /></td>
+            <td>1.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
 
         </tr>
         <tr>
             <th scope="row">OD Start</th>
-            <th>x=Rapid point, Z=feed to z0.0</th>
-            <th>M/A</th>
-            <th>0.0</th>
-            <th>N/A</th>
-            <th>N/A</th>
+            <td>x=Rapid point, Z=feed to z0.0</td>
+            <td>N/A</td>
+            <td>0.0</td>
+            <td>N/A</td>
+            <td>N/A</td>
 
             
         </tr>
         <tr>
             <th scope="row">Intersection 1</th>
-            <th>(Unknown X) Prog ,A90</th>
-            <th>N/A</th>
-            <th>N/A</th>
-            <th>90</th>
-            <th>0.2</th>
+            <td>(Unknown X) Prog ,A90</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>90</td>
+            <td>0.2</td>
            
         </tr>
         <tr>
             <th scope="row">Intersection 2</th>
-            <th>Prog angle ,A and enter target X and Z values</th>
-            <th><input type="number" id="ODxValueI2" step="0.01" /></th>
-            <th><input type="number" id="ODzValueI2" step="0.01" /></th>
-            <th><input type="number" id="ODaValueI2" step="0.01" /></th>
-            <th>N/A</th>
+            <td>Prog angle ,A and enter target X and Z values</td>
+            <td><input type="number" id="ODxValueI2" step="0.01" /></td>
+            <td>-<input type="number" id="ODzValueI2" step="0.01"  /></td>
+            <td><input type="number" id="ODaValueI2" step="0.01" min="0" max="360" /></td>
+            <td>N/A</td>
           
         </tr>
         <tr>
             <th scope="row">Intersection 3</th>
-            <th>Work out Z figure from drawing intersection point</th>
-            <th>N/A</th>
-            <th><input type="number" id="ODzValueI3" step="0.01" /></th>
-            <th>N/A</th>
-            <th>N/A</th>
+            <td>Work out Z figure from drawing intersection point</td>
+            <td>N/A</td>
+            <td><input type="number" id="ODzValueI3" step="0.01" /></td>
+            <td>N/A</td>
+            <td>N/A</td>
 
         </tr>
         <tr>
             <th scope="row">Intersection 4</th>
-            <th>Prog angle ,A (work out incremental move U value)/th>
-            <th><input type="number" id="ODxValueI4" step="0.01" /></th>
-            <th>N/A</th>
-            <th><input type="number" id="ODaValueI4" step="0.01"/></th>
-            <th>N/A</th>
+            <td>Prog angle ,A (work out incremental move U value) </td>
+            <td>U-<input type="number" id="ODxValueI4" step="0.01"/></td>
+            <td>N/A</td>
+            <td><input type="number" id="ODaValueI4" step="0.01" min="0" max="360" /></td>
+            <td>N/A</td>
 
         </tr>
         <tr>
             <th scope="row">Intersection 5</th>
-            <th>Z=Part length + 1mm</th>
-            <th>N/A</th>
-            <th><input type="number" id="ODzValueI5" step="0.01" /></th>
-            <th>N/A</th>
-            <th>N/A</th>
+            <td>Z=Part length + 1mm</td>
+            <td>N/A</td>
+            <td>-<input type="number" id="ODzValueI5" step="0.01" /> </td>
+            <td>N/A</td>
+            <td>N/A</td>
 
         </tr>
         <tr>
             <th scope="row">OD End</th>
-            <th>Main OD + 1mm</th>
-            <th><input type="number" id="ODxValueODE" step="0.01"/></th>
-            <th>N/A</th>
-            <th>N/A</th>
-            <th>N/A</th>
+            <td>Main OD + 1mm</td>
+            <td><input type="number" id="ODxValueODE" step="0.01"  /> </td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
         </tr>
     </tbody>
 </table>
+    
+</div>
+<div>
+    <p>
+        Notes;
+Incremental Moves X = U Z = W
+** Remember that radial values are doubled to remove correct amount from diameter
+E.G step value on OD = 0.15 therefore the U value would be doubled + or - 
+Standard break edges are programmed at R0.2mm
+    </p>
+</div>
 
-<button type="button" onclick="download()">Download G Code</button>
+<button type="button" id="GCodeOD">Download G Code</button>
+
+<script src="~/js/OD.js" asp-append-version="true"></script>

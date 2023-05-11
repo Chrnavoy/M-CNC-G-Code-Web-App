@@ -1,0 +1,7 @@
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\M-CNC G Code WebApp.exe
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\M-CNC G Code WebApp.dll
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\M-CNC G Code WebApp.deps.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\M-CNC G Code WebApp.runtimeconfig.json
+C:\Users\christian.navoy\source\repos\M-CNC G Code WebApp\M-CNC G Code WebApp\obj\Release\net6.0\win-x64\PubTmp\Out\M-CNC G Code WebApp.pdb
