@@ -4,20 +4,7 @@
     ViewData["Title"] = "Inside Diameter";
 }
 <div><h3>Inside Diameter</h3></div>
-<div>
-    <label for="material">Choose a Material:</label>
-    <select name="material" id="materialID">
-        <option value="1">Stainless</option>
-        <option value="2">Mild Steel</option>
-        <option value="3">Aluminium</option>
 
-    </select>
-    <label for="PartnoID"> Part Number</label>
-    <input type="number" id="partnoID" />
-
-
-
-</div>
 
 <table class="table table-bordered">
     <thead>
@@ -114,7 +101,10 @@
         Standard break edges are programmed at R0.2mm
     </p>
 </div>
-<button type="button" id="GCodeID">Download G Code</button>
+<a href="#" id="GCodeID" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm">Save This Section</a>
+
+
+ <a class="btn btn-secondary" id="IDContinue" style="visibility: hidden" asp-area="" asp-page="/SingleGroove">Continue</a>
 
 
 <script src="~/js/ID.js" asp-append-version="true"></script>

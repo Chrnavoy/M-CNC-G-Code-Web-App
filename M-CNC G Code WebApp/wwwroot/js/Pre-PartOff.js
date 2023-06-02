@@ -3,10 +3,7 @@
 
 function extractDataPPO() {
 
-    var material = document.getElementById('materialPPO');
-    var option = material.options[material.selectedIndex].value;
-    var partno = document.getElementById("partnoPPO").value;
-    console.log(option)
+    var option = localStorage.getItem('speed')
 
     // option 1 is ss
     if (option == 1) {
@@ -37,8 +34,8 @@ function extractDataPPO() {
         PPOxValueSP2: document.getElementById('PPOxValueSP2').value,
         // rapid start 2
         PPOxValueRS2: document.getElementById('PPOxValueRS2').value,
-        PPOsValue: speed,
-        partno, partno
+        PPOsValue: speed
+       
         
     }
 
@@ -64,8 +61,13 @@ function GCodePPO() {
 
        
         let PPOGCodeArray = [start, offSet, speed, rapidStart1, start1, endPoint1, start2, rapidStart2, subSafeStart, optionalStop]
-        PPOGCode = PPOGCodeArray.join("")
 
-        download(PPOGCode, data["partno"])
+        var savedArray = JSON.parse(localStorage.getItem('GCode'));
+        var combined = savedArray.concat(PPOGCodeArray)
+        localStorage.setItem('GCode', JSON.stringify(combined));
+
+        $('.bd-example-modal-sm').modal('show');
+        document.getElementById("PPOContinue").style.visibility = 'visible';
+
     }
 }

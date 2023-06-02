@@ -13,10 +13,10 @@
         <option value="3">Aluminium</option>
 
     </select>
-
-    <label for="PartnoOD"> Part Number</label>
-    <input type="number" id="partnoOD"/>
     
+    <label for="Partno"> Part Number</label>
+    <input type="text" id="partno" />
+
 
 </div>
 <div id="table">
@@ -118,6 +118,11 @@ Standard break edges are programmed at R0.2mm
     </p>
 </div>
 
-<button type="button" id="GCodeOD">Download G Code</button>
+
+<a href="#" id="GCodeOD" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm">Save This Section</a>
+
+
+ <a class="btn btn-secondary" id="ODContinue" style="visibility: hidden" asp-area="" asp-page="/ID">Continue</a>
+
 
 <script src="~/js/OD.js" asp-append-version="true"></script>

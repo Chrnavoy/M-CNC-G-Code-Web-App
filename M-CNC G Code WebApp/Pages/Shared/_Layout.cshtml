@@ -22,24 +22,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/OD">Outside Diameter</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/OD">Generate G Code</a>
                         </li>
+                        <!--
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/ID">Inside Diameter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/PartOff">Part Off</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Pre-PartOff">Pre-Part Off</a>
-                        </li>
-                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/SingleGroove">Single Groove</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/History">History</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Pre-PartOff">Pre-Part Off</a>
                         </li>
-                     
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/PartOff">Part Off</a>
+                        </li>
+                        -->
                     </ul>
                 </div>
             </div>
@@ -49,6 +47,22 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <h3>Section Saved</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade false-bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myfalseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <h3>Ensure Fields Aren't Empty</h3>
+            </div>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">

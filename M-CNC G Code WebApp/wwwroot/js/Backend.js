@@ -1,6 +1,4 @@
-﻿
-
-function convertToFloat(data) {
+﻿function convertToFloat(data) {
     // Convert the number to a floating point number with 2 decimal places.
 
     following0 = '.00'
@@ -30,7 +28,7 @@ function checkData(data) {
 
         else {
 
-            alert("Empty Field")
+            $('.false-bd-example-modal-sm').modal('show');
             return false;
         }
     }
@@ -82,4 +80,10 @@ function download(data, title) {
     a.setAttribute('href', url)
     a.setAttribute('download', title + '.nc')
     a.click()
+
+    delete GCode;
 }
+
+
+
+

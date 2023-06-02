@@ -4,10 +4,7 @@ document.getElementById("GCodeSG").addEventListener("click", GCodeSG);
 
 function extractDataSG() {
 
-    var material = document.getElementById('materialSG');
-    var option = material.options[material.selectedIndex].value;
-    var partno = document.getElementById("partnoSG").value;
-    console.log(option)
+    var option = localStorage.getItem('speed')
 
     // option 1 is ss
     if (option == 1) {
@@ -46,8 +43,8 @@ function extractDataSG() {
         SGxValueB2: document.getElementById('SGxValueB2').value,
         // Rapid Point 2
         SGxValueRP2: document.getElementById('SGxValueRP2').value,
-        SGsValue: speed,
-        partno: partno
+        SGsValue: speed
+        
 
     }
 
@@ -79,9 +76,15 @@ function GCodeSG() {
         optionalStop = "M1"
 
         let SGGCodeArray = [safeStart, toolOffset, surfaceSpeed, rapidStart, start1, groove1, bore1, endPoint1, rapidPoint1, start2, groove2, bore2, endPoint2, rapidPoint2, subSafeStart, optionalStop]
-        SGGCode = SGGCodeArray.join("")
 
-        download(SGGCode, data["partno"])
+        var savedArray = JSON.parse(localStorage.getItem('GCode'));
+        var combined = savedArray.concat(SGGCodeArray)
+        localStorage.setItem('GCode', JSON.stringify(combined));
+
+        $('.bd-example-modal-sm').modal('show');
+        document.getElementById("SGContinue").style.visibility = 'visible';
+
     }
+
 }
 

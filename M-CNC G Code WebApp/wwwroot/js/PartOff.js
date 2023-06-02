@@ -4,9 +4,7 @@ document.getElementById("GCodePO").addEventListener("click", GCodePO);
 
 function extractDataPO() {
 
-    var material = document.getElementById('materialPO');
-    var option = material.options[material.selectedIndex].value;
-    console.log(option)
+    var option = localStorage.getItem('speed')
 
     // option 1 is ss
     if (option == 1) {
@@ -22,8 +20,7 @@ function extractDataPO() {
     else {
         var speed = 200
     }
-    var partno = document.getElementById("partnoPO").value;
-
+    
     var data = new Object();
 
     var data = {
@@ -43,7 +40,7 @@ function extractDataPO() {
         // Rapid Start
         POxValueRS2: document.getElementById('POxValueRS2').value,
         POsValue: speed,
-        partno, partno
+        
     }
 
     return data
@@ -73,8 +70,15 @@ function GCodePO() {
         optionalStop = "M1"
 
         let POGCodeArray = [start, offSet, speed, rapidStart, pStart1, pEnd, pStart2, startPoint, featherStart, featherEnd, slowSpindle, coolant, poEnd, rapidStart2, subSafeStart, optionalStop]
-        POGCode = POGCodeArray.join("")
 
-        download(POGCode, data["partno"])
+        var savedArray = JSON.parse(localStorage.getItem('GCode'));
+        var combined = savedArray.concat(POGCodeArray)
+
+        GCode = combined.join("")
+       
+
+        download(GCode, localStorage.getItem('partno'))
+
+        localStorage.clear();
     }
 }

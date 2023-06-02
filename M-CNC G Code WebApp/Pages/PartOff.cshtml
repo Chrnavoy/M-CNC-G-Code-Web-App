@@ -4,20 +4,6 @@
     ViewData["Title"] = "Part Off";
 }
 <div><h3>Part Off</h3></div>
-<div>
-    <label for="material">Choose a Material:</label>
-    <select name="material" id="materialPO">
-        <option value="1">Stainless</option>
-        <option value="2">Mild Steel</option>
-        <option value="3">Aluminium</option>
-
-    </select>
-    <label for="PartnoPO"> Part Number</label>
-    <input type="number" id="partnoPO" />
-
-
-
-</div>
 
 <table class="table table-bordered">
     <thead>
@@ -129,6 +115,6 @@ How to calculate the Rapid Start point in Z
 Z = Part Length + Tool width
     </p>
 </div>
-<button type="button" id="GCodePO">Download G Code</button>
+<a href="#" id="GCodePO" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm">Create G Code</a>
 
 <script src="~/js/PartOff.js" asp-append-version="true"></script>

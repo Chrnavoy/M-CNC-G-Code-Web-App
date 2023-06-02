@@ -4,10 +4,8 @@ document.getElementById("GCodeID").addEventListener('click', GCodeID);
 
 function extractDataID() {
 
-    var material = document.getElementById('materialID');
-    var option = material.options[material.selectedIndex].value;
-    console.log(option)
-
+    var option = localStorage.getItem('speed')
+    
     // option 1 is ss
     if (option == 1) {
         var speed = 200
@@ -23,7 +21,7 @@ function extractDataID() {
         var speed = 500
     }
 
-    var partno = document.getElementById("partnoID").value;
+  
 
     var data = new Object();
 
@@ -40,8 +38,8 @@ function extractDataID() {
         IDzValueI4: document.getElementById('IDzValueI4').value.trim(),
         // ID End
         IDxValueIDE: document.getElementById('IDxValueIDE').value.trim(),
-        IDsValue: speed,
-        partno: partno
+        IDsValue: speed
+        
 
     }
 
@@ -60,7 +58,7 @@ function GCodeID() {
         speed = "G96 S" + data["IDsValue"] + "M3 P11\n"
         rapidStart = "G0 X" + data["IDxValueRP"] + " Z1.0 M8\n"
         idStart = "G1G41 Z0.05 F0.1\n"
-        intersection1 = "X" + data["IDxValueI1"] + " Z0.0" + ",R0.2" +"\n" //Z value??
+        intersection1 = "X" + data["IDxValueI1"] + " Z0.0" + ",R0.2" +"\n" 
         intersection2 = "Z-" + data["IDzValueI2"] + "\n"
         intersection3 = "X" + data["IDxValueI3"] + "\n"
         intersection4 = "Z-" + data["IDzValueI4"] + "\n"
@@ -70,9 +68,15 @@ function GCodeID() {
         optionalStop = "M1"
 
         let IDGCodeArray = [start, safeStart, offSet, speed, rapidStart, idStart, intersection1, intersection2, intersection3, intersection4, idEnd, rapidEnd, subSafeStart, optionalStop]
-        IDGCode = IDGCodeArray.join("")
+       
+        var savedArray = JSON.parse(localStorage.getItem('GCode'));
+        var combined = savedArray.concat(IDGCodeArray)
+        localStorage.setItem('GCode', JSON.stringify(combined));
 
-        download(IDGCode, data["partno"])
+        $('.bd-example-modal-sm').modal('show');
+        document.getElementById("IDContinue").style.visibility = 'visible';
+
+        
     }
 
 }

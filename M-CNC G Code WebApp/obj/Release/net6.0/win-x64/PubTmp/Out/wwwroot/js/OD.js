@@ -6,6 +6,7 @@ function extractDataOD() {
 
     var material = document.getElementById('materialOD');
     var option = material.options[material.selectedIndex].value;
+    localStorage.setItem('speed', option)
     
 
     // option 1 is ss
@@ -23,7 +24,7 @@ function extractDataOD() {
         var speed = 500
     }
 
-    var partno = document.getElementById("partnoOD").value;
+  
 
     var data = new Object();
     var data = {
@@ -43,8 +44,8 @@ function extractDataOD() {
          ODzValueI5: document.getElementById('ODzValueI5').value,
          // End
         ODxValueODE: document.getElementById('ODxValueODE').value,
-        ODsValue: speed,
-        partno: partno
+        ODsValue: speed
+       
        
     }
     
@@ -55,8 +56,9 @@ function extractDataOD() {
 
 
 function GCodeOD() {
+    
 
-    console.log("od clicked")
+
     data = extractDataOD();
     
 
@@ -76,9 +78,18 @@ function GCodeOD() {
         optionalStop = "M1"
 
         let ODGCodeArray = [safeStart, toolOffset, surfaceSpeed, rapidStart, odStart, intersection1, intersection2, intersection3, intersection4, intersection5, odEnd, subSafeStart, optionalStop]
-        ODGCode = ODGCodeArray.join("")
+        json = JSON.stringify(ODGCodeArray)
+        localStorage.setItem('GCode', json);
+        
 
-        download(ODGCode, data["partno"])
+        partnumber = document.getElementById('partno').value;
+        localStorage.setItem('partno', partnumber)
+
+        $('.bd-example-modal-sm').modal('show');   
+        document.getElementById("ODContinue").style.visibility = 'visible';
+        
     }
+    
 
 }
+
