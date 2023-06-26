@@ -75,7 +75,7 @@ function GCodeOD() {
         intersection5 = "Z-" +  data["ODzValueI5"] + "\n"
         odEnd = "G0 X" +  data["ODxValueODE"] + "\n"
         subSafeStart = "M98P7000\n"
-        optionalStop = "M1"
+        optionalStop = "M1\n"
 
         let ODGCodeArray = [safeStart, toolOffset, surfaceSpeed, rapidStart, odStart, intersection1, intersection2, intersection3, intersection4, intersection5, odEnd, subSafeStart, optionalStop]
         json = JSON.stringify(ODGCodeArray)

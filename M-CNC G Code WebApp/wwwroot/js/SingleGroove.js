@@ -42,7 +42,7 @@ function extractDataSG() {
         // Bore 2
         SGxValueB2: document.getElementById('SGxValueB2').value,
         // Rapid Point 2
-        SGxValueRP2: document.getElementById('SGxValueRP2').value,
+       // SGxValueRP2: document.getElementById('SGxValueRP2').value,
         SGsValue: speed
         
 
@@ -58,24 +58,24 @@ function GCodeSG() {
     data = extractDataSG();
     if (checkData(data)) {
 
-        safeStart = "N21M98P7000\n"
+        safeStart = "\nN21M98P7000\n"
         toolOffset = "T2121\n"
         surfaceSpeed = "G96 S" + data["SGsValue"] + "M3P11\n"
         rapidStart = "G0 X" + data["SGxValueRS"] + " Z1.0 M8\n"
         start1 = "Z-" + data["SGzValueSP1"] + "\n"
         groove1 = "G01 X" + data["SGxValueG1"] + " F0.02\n"
-        bore1 = "X" + data["SGxValueB1"] + " R0.4F0.04\n"
+        bore1 = "X" + data["SGxValueB1"] + " ,R0.4F0.04\n"
         endPoint1 = "U-0.03 W-0.6\n"
         rapidPoint1 = "G0 X" + data["SGxValueRP1"] + "\n"
         start2 = "W" + data["SGzValueSP2"] + "\n"
         groove2 = "G01 X" + data["SGxValueG2"] + "\n"
-        bore2 = "X" + data["SGxValueB2"] + " R0.4" +"\n"
+        bore2 = "X" + data["SGxValueB2"] + " ,R0.4" +"\n"
         endPoint2 = "U-0.03 W-0.6\n"
-        rapidPoint2 = "G0 X" + data["SGxValueRP2"] +"\n"
+        // rapidPoint2 = "G0 X" + data["SGxValueRP2"] +"\n"
         subSafeStart = "M98P7000\n"
-        optionalStop = "M1"
+        optionalStop = "M1\n"
 
-        let SGGCodeArray = [safeStart, toolOffset, surfaceSpeed, rapidStart, start1, groove1, bore1, endPoint1, rapidPoint1, start2, groove2, bore2, endPoint2, rapidPoint2, subSafeStart, optionalStop]
+        let SGGCodeArray = [safeStart, toolOffset, surfaceSpeed, rapidStart, start1, groove1, bore1, endPoint1, rapidPoint1, start2, groove2, bore2, endPoint2, /*rapidPoint2,*/ subSafeStart, optionalStop]
 
         var savedArray = JSON.parse(localStorage.getItem('GCode'));
         var combined = savedArray.concat(SGGCodeArray)

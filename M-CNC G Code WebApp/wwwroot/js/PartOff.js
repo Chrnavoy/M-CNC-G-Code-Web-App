@@ -51,8 +51,8 @@ function GCodePO() {
 
     data = extractDataPO();
     if (checkData(data)) {
-
-        start = "N03M98P7000\n"
+        
+        start = "\nN03M98P7000\n"
         offSet = "T0303\n"
         speed = "G96 S" + data["POsValue"] + "M3P11\n"
         rapidStart = "G0 X" + data["POxValueRS1"] + "Z" +data["POzValueRS1"] + " M8\n"
@@ -61,7 +61,7 @@ function GCodePO() {
         pStart2 = "G0 X" + data["POxValuePS2"] + "\n"
         startPoint = "W1.0\n"
         featherStart = "G01 U-0.95\n"
-        featherEnd = "U-0.05 W-1.0 R0.5\n"
+        featherEnd = "U-0.05 W-1.0 ,R0.4\n"
         slowSpindle = "X" + data["POxValueSS"] + "\n"
         coolant = "M9\n"
         poEnd = "G97S300" + data["POxValuePOE"] + "F0.04M10\n"

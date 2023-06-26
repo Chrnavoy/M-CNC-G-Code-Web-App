@@ -52,7 +52,7 @@ function GCodeID() {
     data = extractDataID();
    
     if (checkData(data)) {
-        start = "N03\n"
+        start = "\nN03\n"
         safeStart = "M98P7000\n"
         offSet = "T0303\n"
         speed = "G96 S" + data["IDsValue"] + "M3 P11\n"
@@ -65,7 +65,7 @@ function GCodeID() {
         idEnd = "X" + data["IDxValueIDE"] + "\n"
         rapidEnd = "G0 Z1.0"
         subSafeStart = "M98P7000\n"
-        optionalStop = "M1"
+        optionalStop = "M1\n"
 
         let IDGCodeArray = [start, safeStart, offSet, speed, rapidStart, idStart, intersection1, intersection2, intersection3, intersection4, idEnd, rapidEnd, subSafeStart, optionalStop]
        
