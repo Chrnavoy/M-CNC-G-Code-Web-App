@@ -48,16 +48,16 @@ function GCodePPO() {
     data = extractDataPPO();
     if (checkData(data)) {
 
-        start = "N07M98P7000\n"
+        start = "\nN07M98P7000\n"
         offSet = "T0707\n"
         speed = "G96 S" + data["PPOsValue"] + "M3P11\n"
-        rapidStart1 = "G0 X" + data["PPOxValueRS1"] + " Z1.0 M8\n"
+        rapidStart1 = "G0 X" + data["PPOxValueRS1"] + " -Z1.0 M8\n"
         start1 = "Z" + data["PPOzValueSP1"] + "\n"
         endPoint1 = "G01 X" + data["PPOxValueEP"] + " F0.04\n"
         start2 = "G0 X" + data["PPOxValueSP2"] + "\n"
         rapidStart2 = "Z" + data["PPOxValueRS2"] + "\n"
         subSafeStart = "M98P7000\n"
-        optionalStop = "M1"
+        optionalStop = "M1\n"
 
        
         let PPOGCodeArray = [start, offSet, speed, rapidStart1, start1, endPoint1, start2, rapidStart2, subSafeStart, optionalStop]

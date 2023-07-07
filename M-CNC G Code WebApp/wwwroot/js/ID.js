@@ -63,7 +63,7 @@ function GCodeID() {
         intersection3 = "X" + data["IDxValueI3"] + "\n"
         intersection4 = "Z-" + data["IDzValueI4"] + "\n"
         idEnd = "X" + data["IDxValueIDE"] + "\n"
-        rapidEnd = "G0 Z1.0"
+        rapidEnd = "G0 Z1.0\n"
         subSafeStart = "M98P7000\n"
         optionalStop = "M1\n"
 

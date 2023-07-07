@@ -51,25 +51,27 @@ function GCodePO() {
 
     data = extractDataPO();
     if (checkData(data)) {
-
-        start = "N03M98P7000\n"
+        
+        start = "\nN03M98P7000\n"
         offSet = "T0303\n"
         speed = "G96 S" + data["POsValue"] + "M3P11\n"
-        rapidStart = "G0 X" + data["POxValueRS1"] + "Z" +data["POzValueRS1"] + " M8\n"
+        rapidStart = "G0 X" + data["POxValueRS1"] + " Z" +data["POzValueRS1"] + " M8\n"
         pStart1 = "X" + data["POxValuePS1"] + "\n"
         pEnd = "G01 X" + data["POxValuePE"] +" F0.1" +  "\n"
         pStart2 = "G0 X" + data["POxValuePS2"] + "\n"
         startPoint = "W1.0\n"
         featherStart = "G01 U-0.95\n"
-        featherEnd = "U-0.05 W-1.0 R0.5\n"
+        featherEnd = "U-0.05 W-1.0 ,R0.4\n"
         slowSpindle = "X" + data["POxValueSS"] + "\n"
         coolant = "M9\n"
-        poEnd = "G97S300" + data["POxValuePOE"] + "F0.04M10\n"
+        poEnd = "G97S300" + "X" + data["POxValuePOE"] + "F0.04M10\n"
         rapidStart2 = "G0 X" + data["POxValueRS2"] + "\n"
+        m11 = "M11\n"
         subSafeStart = "M98P7000\n"
+        m54 = "M54\n"
         optionalStop = "M1"
 
-        let POGCodeArray = [start, offSet, speed, rapidStart, pStart1, pEnd, pStart2, startPoint, featherStart, featherEnd, slowSpindle, coolant, poEnd, rapidStart2, subSafeStart, optionalStop]
+        let POGCodeArray = [start, offSet, speed, rapidStart, pStart1, pEnd, pStart2, startPoint, featherStart, featherEnd, slowSpindle, coolant, poEnd, rapidStart2, m11, subSafeStart, m54, optionalStop]
 
         var savedArray = JSON.parse(localStorage.getItem('GCode'));
         var combined = savedArray.concat(POGCodeArray)
